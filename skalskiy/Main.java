@@ -3,6 +3,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class Main
 {
@@ -23,7 +26,8 @@ public class Main
             System.out.println("\u001B[33m3. View Tasks\u001B[0m");
             System.out.println("\u001B[33m4. Update Task\u001B[0m");
             System.out.println("\u001B[33m5. Search Task\u001B[0m");
-            System.out.println("\u001B[33m6. Sort Tasks\u001B[0m");
+            System.out.println("\u001B[33m6. Sort Tasks by Due Date\u001B[0m");
+            System.out.println("\u001B[33m7. Sort Tasks by Status\u001B[0m");
             System.out.println("\u001B[33mexit. Exit Application\u001B[0m");
             System.out.println("\u001B[32m-----------------------------\u001B[0m");
             System.out.print("\u001B[36mEnter choice: \u001B[0m");
@@ -48,7 +52,12 @@ public class Main
                     searchTask(scanner);
                     break;
                 case "6":
-                    sortTasks();
+                    Sort.sortTasksByDueDate(tasks);
+                    viewTasks();
+                    break;
+                case "7":
+                    Sort.sortTasksByStatus(tasks);
+                    viewTasks();
                     break;
                 case "exit":
                     System.out.println("\u001B[31mApplication Closed.\u001B[0m");
@@ -168,13 +177,7 @@ public class Main
         }
     }
 
-    // Сортування завдань за терміном
-    private static void sortTasks()
-    {
-        tasks.sort((task1, task2) -> task1.dueDate.compareTo(task2.dueDate));
-        System.out.println("\u001B[32mTasks sorted by due date.\u001B[0m");
-        viewTasks();
-    }
+
 }
 
 

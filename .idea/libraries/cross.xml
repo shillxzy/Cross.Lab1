@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="cross">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/skalskiy" />
+    </SOURCES>
+  </library>
+</component>
